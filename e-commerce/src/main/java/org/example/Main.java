@@ -10,11 +10,10 @@ public class Main {
         log.info("Hello world!");
 
         Payment payment = new Payment();
-
-        payment.chooseMethodOfPayment(new Bitcoin()).pay(new BigDecimal("12.54"));
-        payment.chooseMethodOfPayment(new BankTransfer()).pay(new BigDecimal("12.54"));
-        payment.chooseMethodOfPayment(new CreditCard()).pay(new BigDecimal("12.54"));
-        payment.chooseMethodOfPayment(new PayPal()).pay(new BigDecimal("12.54"));
+        payment.payWithOneMethod(new Bitcoin(), new BigDecimal("12.54"));
+        payment.payWithOneMethod(new BankTransfer(), new BigDecimal("12.54"));
+        payment.payWithOneMethod(new CreditCard(), new BigDecimal("12.54"));
+        payment.payWithOneMethod(new PayPal(), new BigDecimal("12.54"));
     }
 }
 

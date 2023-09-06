@@ -1,7 +1,9 @@
 package org.example;
 
+import java.math.BigDecimal;
+
 public class Payment {
-    <T> T chooseMethodOfPayment(T paymentMetod) {
-        return paymentMetod;
+    void payWithOneMethod(Payable payable, BigDecimal amount) {
+        payable.pay(amount);
     }
 }

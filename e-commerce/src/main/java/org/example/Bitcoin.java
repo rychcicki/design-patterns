@@ -2,7 +2,7 @@ package org.example;
 
 import java.math.BigDecimal;
 
-public class Bitcoin implements Payable<Bitcoin> {
+public class Bitcoin implements Payable {
 
     @Override
     public void pay(BigDecimal amount) {
