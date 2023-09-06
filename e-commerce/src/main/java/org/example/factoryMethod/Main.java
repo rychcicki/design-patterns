@@ -1,4 +1,4 @@
-package org.example;
+package org.example.factoryMethod;
 
 import lombok.extern.java.Log;
 
