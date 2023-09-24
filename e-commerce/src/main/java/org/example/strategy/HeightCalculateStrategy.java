@@ -1,7 +1,7 @@
 package org.example.strategy;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface HeightCalculateStrategy {
-    void calculateHeight(Collection<EngineeringObject> engineeringObjects);
+    void calculateHeight(List<?> engineeringObjects);
 }
