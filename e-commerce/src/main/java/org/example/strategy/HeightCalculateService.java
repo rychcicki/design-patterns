@@ -1,15 +1,14 @@
 package org.example.strategy;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
-public class HeightCalculateService {
-    private final HeightCalculateStrategy strategy;   //interface
+@AllArgsConstructor
+public class HeightCalculateService<T> {
+    private final HeightCalculateStrategy<T> strategy;
 
-    public HeightCalculateService(HeightCalculateStrategy strategy) {
-        this.strategy = strategy;
-    }   //Można Lombokiem @AllArgsConstructor
-
-    public void calculateHeight(List<?> engineeringObjects) {
-        this.strategy.calculateHeight(engineeringObjects); //interface
+    public void calculateHeight(List<T> engineeringObjects) {
+        this.strategy.calculateHeight(engineeringObjects);
     }
 }

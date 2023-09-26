@@ -1,22 +1,22 @@
 package org.example.strategy;
 
+import lombok.extern.java.Log;
+
 import java.util.List;
 
-public class RailwayBridgeStrategy implements HeightCalculateStrategy {
+@Log
+public class RailwayBridgeStrategy implements HeightCalculateStrategy<Bridge> {
     @Override
-    public void calculateHeight(List<?> engineeringObject) {
-        List<Bridge> bridgeList = BridgeBuilder.buildNewBridgeFromObjects(engineeringObject);
+    public void calculateHeight(List engineeringObject) {
+        List<Bridge> bridgeList = new BridgeBuilder<>().buildNewBridgeFromObjects(engineeringObject);
 
         List<Bridge> bridges = bridgeList.stream()
                 .filter(bridge -> bridge.getKind().equals(Way.RAILWAY))
-                .peek(bridge -> bridge.setHeight(bridge.getWaterSurface() + 0.5))
+                .peek(bridge -> {
+                    bridge.setHeight(bridge.getWaterSurface() + 0.5);
+                    log.info("Railway's bridge height level is at: " + bridge.getHeight() + " m.");
+                })
                 .toList();
-
-        for (Bridge bridge : bridges) {
-            System.out.println("Railway's bridge height level is at: " + bridge.getHeight() + " m.");
-        }
-
-        System.out.println("Calculate railway's bridge height finished.");
-        System.out.println("Your railway's bridge: " + bridges + "\n");
+        log.info("Calculate railway's bridge height finished.\nYour railway's bridge: " + bridges + "\n");
     }
 }

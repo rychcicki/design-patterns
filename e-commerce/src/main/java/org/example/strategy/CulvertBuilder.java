@@ -3,7 +3,7 @@ package org.example.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CulvertBuilder {
+public class CulvertBuilder<T> {
     static List<Culvert> buildListOfCulverts() {
         Culvert culvert1 = Culvert.builder()
                 .type(Type.CULVERT)
@@ -26,10 +26,12 @@ public class CulvertBuilder {
         return List.of(culvert1, culvert2);
     }
 
-    public static List<Culvert> buildNewCulvertFromObject(List<?> engineeringObject) {
-        List<Culvert> culvertList = new ArrayList<>();
-        for (Object culvert : engineeringObject) {
-            culvertList.add((Culvert) culvert);
+    public List<T> buildNewCulvertFromObject(List<T> engineeringObject) {
+        List<T> culvertList = new ArrayList<>();
+        for (T t : engineeringObject) {
+            if (t instanceof Culvert) {
+                culvertList.add(t);
+            }
         }
         return culvertList;
     }

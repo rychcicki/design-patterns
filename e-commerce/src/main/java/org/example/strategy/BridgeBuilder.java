@@ -3,7 +3,7 @@ package org.example.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BridgeBuilder {
+public class BridgeBuilder<T> {
     static List<Bridge> buildListOfBridges() {
         Bridge bridge1 = Bridge.builder()
                 .type(Type.BRIDGE)
@@ -21,13 +21,15 @@ public class BridgeBuilder {
                 .probability(0.5)
                 .flow(17.1)
                 .build();
-        return List.of(bridge1, bridge2);
+        return java.util.List.of(bridge1, bridge2);
     }
 
-    public static List<Bridge> buildNewBridgeFromObjects(List<?> engineeringObject) {
-        List<Bridge> bridgeList = new ArrayList<>();
-        for (Object bridge : engineeringObject) {
-            bridgeList.add((Bridge) bridge);
+    public List<T> buildNewBridgeFromObjects(List<T> engineeringObject) {
+        List<T> bridgeList = new ArrayList<>();
+        for (T t : engineeringObject) {
+            if (t instanceof Bridge) {
+                bridgeList.add(t);
+            }
         }
         return bridgeList;
     }

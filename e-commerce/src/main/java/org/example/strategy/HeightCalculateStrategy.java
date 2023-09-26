@@ -2,6 +2,6 @@ package org.example.strategy;
 
 import java.util.List;
 
-public interface HeightCalculateStrategy {
-    void calculateHeight(List<?> engineeringObjects);
+public interface HeightCalculateStrategy<T> {
+    void calculateHeight(List<T> engineeringObjects);
 }
