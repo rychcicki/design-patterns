@@ -11,7 +11,7 @@ import java.util.Set;
 public class Wallet {
     private String name;
     @Singular("oneCurrency")
-    private final Set<String> listOfCurrencies;   //niemodyfikowalna kolekcja
+    private final Set<String> listOfCurrencies;
 
     public static void main(String[] args) {
         System.out.println(Wallet.builder()
@@ -21,7 +21,7 @@ public class Wallet {
                 .oneCurrency("ojro")
                 .oneCurrency("cebulion")
                 .build());
-    }
-    /** Tutaj będzie implementacja @Builder z @Singular*/
-}
 
+    }
+    /** Tutaj nie będzie implementacji @Builder z @Singular*/
+}

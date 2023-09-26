@@ -22,12 +22,12 @@ public class Person {
     }
 
     // 2. Tworzysz metodę statyczną builder(), która zwraca ObjBuilder,
-    public static ObjBuilder builder() {
-        return new ObjBuilder();
+    public static PersonBuilder builder() {
+        return new PersonBuilder();
     }
 
     // 3. Tworzysz klasę statyczną ObjBuilder ze wszystkimi polami typu private danej klasy.
-    public static class ObjBuilder {
+    public static class PersonBuilder {
         private String firstName;
         private String lastName;
         private int age;
@@ -36,30 +36,30 @@ public class Person {
 
         //  4. W tej klasie robisz konstruktor bezparametrowy i metody ustawiające dane pola (podobne do setter),
         //      ale zwracające obiekty typu ObjBuilder (return this;).
-        public ObjBuilder() {
+        public PersonBuilder() {
         }
 
-        public ObjBuilder firstName(String firstName) {
+        public PersonBuilder firstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public ObjBuilder lastName(String lastName) {
+        public PersonBuilder lastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public ObjBuilder age(int age) {
+        public PersonBuilder age(int age) {
             this.age = age;
             return this;
         }
 
-        public ObjBuilder pesel(long pesel) {
+        public PersonBuilder pesel(long pesel) {
             this.pesel = pesel;
             return this;
         }
 
-        public ObjBuilder dateOfBirth(LocalDate dateOfBirth) {
+        public PersonBuilder dateOfBirth(LocalDate dateOfBirth) {
             this.dateOfBirth = dateOfBirth;
             return this;
         }
