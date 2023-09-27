@@ -1,8 +1,10 @@
 package org.example.builder;
 
+import lombok.Getter;
 import lombok.ToString;
 
 @ToString
+@Getter
 public class Student {
     private String firstName;
     private String lastName;
@@ -31,7 +33,7 @@ public class Student {
         private String lastName;
         private int year;
 
-        public StudentBuilder() {
+        StudentBuilder() {
         }
 
         public StudentBuilder firstName(String firstName) {
@@ -52,7 +54,7 @@ public class Student {
         public Student build() {
             return Student.createStudent(this.firstName, this.lastName, this.year);
         }
-        
+
         @Override
         public String toString() {
             return "StudentBuilder{" +
