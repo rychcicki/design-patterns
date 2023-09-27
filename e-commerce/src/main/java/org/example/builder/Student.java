@@ -52,10 +52,7 @@ public class Student {
         public Student build() {
             return Student.createStudent(this.firstName, this.lastName, this.year);
         }
-
-        /**
-         * Po co ten toString() jak i tak nie odnosi się do klasy, której obiekt zwraca??
-         */
+        
         @Override
         public String toString() {
             return "StudentBuilder{" +
