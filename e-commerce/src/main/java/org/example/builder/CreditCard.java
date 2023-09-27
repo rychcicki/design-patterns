@@ -27,7 +27,7 @@ public class CreditCard {
         private int numberOfCard;
         private LocalDate validDate;
 
-        public CreditCardBuilder() {
+        CreditCardBuilder() {
         }
 
         public CreditCardBuilder numberOfCard(int numberOfCard) {

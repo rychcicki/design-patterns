@@ -33,7 +33,7 @@ public class Student {
         private String lastName;
         private int year;
 
-        public StudentBuilder() {
+        StudentBuilder() {
         }
 
         public StudentBuilder firstName(String firstName) {
