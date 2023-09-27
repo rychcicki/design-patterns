@@ -1,6 +1,7 @@
 package org.example.builder;
 
 import lombok.Builder;
+import lombok.Getter;
 import lombok.Singular;
 import lombok.ToString;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 
 @Builder
 @ToString
+@Getter
 public class Wallet {
     private String name;
     @Singular("oneCurrency")
@@ -23,4 +25,3 @@ public class Wallet {
                 .build());
     }
 }
-
