@@ -1,10 +1,12 @@
 package org.example.builder;
 
+import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDate;
 
 @ToString
+@Getter
 public class CreditCard {
     private int numberOfCard;
     private Person owner;

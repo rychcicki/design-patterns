@@ -22,5 +22,4 @@ public class Wallet {
                 .oneCurrency("cebulion")
                 .build());
     }
-    /** Tutaj nie będzie implementacji @Builder z @Singular*/
 }
