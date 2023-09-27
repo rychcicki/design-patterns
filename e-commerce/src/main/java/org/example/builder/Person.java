@@ -1,10 +1,12 @@
 package org.example.builder;
 
+import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDate;
 
 @ToString
+@Getter
 public class Person {
     private String firstName;
     private String lastName;
@@ -36,7 +38,7 @@ public class Person {
 
         //  4. W tej klasie robisz konstruktor bezparametrowy i metody ustawiające dane pola (podobne do setter),
         //      ale zwracające obiekty typu ObjBuilder (return this;).
-        public PersonBuilder() {
+        PersonBuilder() {
         }
 
         public PersonBuilder firstName(String firstName) {

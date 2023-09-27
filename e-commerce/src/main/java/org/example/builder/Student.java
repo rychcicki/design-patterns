@@ -1,8 +1,10 @@
 package org.example.builder;
 
+import lombok.Getter;
 import lombok.ToString;
 
 @ToString
+@Getter
 public class Student {
     private String firstName;
     private String lastName;
